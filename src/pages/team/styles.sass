@@ -1,0 +1,134 @@
+.team
+  &__container
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+
+  &__btn
+    &--remove
+      border-right: 1px solid
+      padding: 25px 80px
+      height: 70px
+      min-width: 300px
+      line-height: 24px
+      overflow: hidden
+      backface-visibility: hidden
+      &:before
+        position: absolute
+        height: 100%
+        width: 100%
+        line-height: 2.5
+        font-size: 180%
+        transition: all 1s
+        left: -100%
+        top: 0
+      &:hover
+        border-right: 1px solid
+        &:before
+          left: 0
+        span
+          transform: translateX(200%)
+
+  &-item
+    animation: team-appear 0.7s ease-in-out
+    &__wrapper
+      position: relative
+      overflow: hidden
+      border: 1px solid
+      height: 300px
+      display: flex
+      justify-content: center
+      transition: all 0.25s ease-in-out
+
+      .caption-text
+        z-index: 10
+        color: #fff
+        position: absolute
+        width: 295px
+        height: 300px
+        text-align: center
+        top: 104px
+        text-transform: uppercase
+        font-size: 24px
+
+      .blur
+        background-color: rgba(0,0,0,0.65)
+        height: 300px
+        width: 298px
+        z-index: 5
+        top: 0
+        position: absolute
+
+      img
+        transition: all 0.25s ease-in-out
+        width: 120%
+        align-self: center
+        position: absolute
+
+      .caption
+        position: absolute
+        opacity: 0
+        transition: all 0.45s ease-in-out
+        top: 0
+        left: 0
+
+      &:hover
+        .caption
+          opacity: 1
+          z-index: 5
+        img
+          opacity: 1
+          transform: scale(1.15,1.15)
+
+
+  &__no-results
+    background: #000
+    text-shadow: 0px 0px 10px #fff
+    padding: 15px
+    animation: home-appear 0.3s ease-in-out
+
+    h3
+      margin-top: 0
+      animation: no-results-appear 0.5s ease-in-out
+
+.btn
+  &__confirm--remove, &__confirm--cancel
+    font-weight: normal
+    border-radius: 2px
+    padding: 0px 35px
+    line-height: 40px
+
+    &:hover
+      transform: scaleX(1.1)
+
+
+@keyframes team-appear
+  0%
+    transform: translateY(100%)  rotate(180deg)
+  100%
+    transform: translateY(0)
+
+@keyframes no-results-appear
+  0%
+    transform: translateY(200%) skew(90deg)
+  100%
+    transform: translateY(0) skew(0)
+
+
+// mobile
+@media (max-width: 450px)
+  .team-item__wrapper
+    height: 200px
+
+    .blur, .caption-text
+      width: 225px
+      height: 200px
+    .caption-text
+      top: 65px
+
+  .team__btn--remove
+    min-width: 225px
+    height: 50px
+    padding: 13px 80px
+    &:after
+      line-height: 1.7

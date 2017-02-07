@@ -1,0 +1,55 @@
+.navbar
+  min-height: 50px
+  background: #000
+  margin-bottom: 20px
+  padding: 0 15px
+
+  &__nav
+    display: flex
+
+    &__item
+      list-style: none
+      padding: 0 10px
+      padding: 10px 40px
+
+      &>a
+        text-transform: uppercase
+        text-decoration: none
+        color: #fff
+        text-shadow: 0 0 20px #fdfff2
+        position: relative
+        transition: transform 0.3s cubic-bezier(0.7, 0.01, 0.37, 1),color 0.3s
+
+        &:after
+          content: ''
+          position: absolute
+          top: 9px
+          height: 1px
+          width: 19px
+          box-shadow: 0 0 15px 1px #fff
+          background: #fff
+          transition-delay: 0.1s
+          transition-timing-function: cubic-bezier(0.7, 0.01, 0.37, 1)
+          transition: all 0.4s, transform 0.4s
+          transform: translateX(0px)
+          right: -22px
+        &:before
+          @extend a:after
+          left: -22px
+
+        &:hover, &:active, &:focus
+          transform: translateX(1px)
+          &:after
+            transform: translateX(20px)
+            width: 0px
+          &:before
+            transform: translateX(-20px)
+            width: 0px
+
+// mobile
+@media (max-width: 450px)
+  .navbar__nav
+    flex-flow: column
+    align-items: center
+
+

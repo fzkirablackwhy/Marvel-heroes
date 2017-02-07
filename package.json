@@ -1,0 +1,26 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "custom-react-scripts": "0.0.23",
+    "react-router": "latest"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "latest",
+    "classnames": "latest",
+    "lodash": "latest",
+    "marvel-api": "latest",
+    "react-router-redux": "latest",
+    "redux": "latest",
+    "redux-thunk": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

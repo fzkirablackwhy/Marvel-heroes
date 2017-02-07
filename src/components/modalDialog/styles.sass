@@ -1,0 +1,99 @@
+.md-modal
+  position: fixed
+  top: 50%
+  left: 50%
+  width: 50%
+  max-width: 630px
+  min-width: 320px
+  height: auto
+  z-index: 2000
+  visibility: visible
+  transform: translateX(-50%) translateY(-60%)
+
+  .md-content
+    color: #fff
+    position: relative
+    border-radius: 3px
+    margin: 0 auto
+    animation: md-show 0.4s ease-in-out
+
+  .md-header
+    padding: 0.4em
+    text-align: center
+    font-size: 2.4em
+    background: rgba(0, 0, 0, 0.33)
+    text-shadow: 0px 0px 10px #fff
+
+    &__title
+      line-height: 1.45
+      margin: 0
+
+    &__btn--close
+      padding: 0
+      background: none
+      border: 0
+      float: right
+      font-size: 36px
+      line-height: 0.45
+      color: #222
+      text-shadow: 0 1px 4px #fff
+      opacity: .2
+      transition: all .5s
+
+      &:hover
+        color: #fff
+        text-shadow: 0 0 23px #fff
+        opacity: 1
+
+  .md-body
+    padding: 15px 40px 30px
+    h3
+      span
+        color: #67fbbe
+
+  .md-footer
+    display: flex
+    justify-content: space-around
+    padding: 0px 40px 10px
+
+.md-overlay
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  z-index: 1000
+  background: rgba(5, 9, 29, 0.71)
+  animation: show-overlay 0.4s ease-in-out
+
+
+@keyframes md-show
+  0%
+    transform: translateY(-200%)
+    opacity: 0
+  100%
+    transform: translateY(0%)
+    opacity: 1
+
+
+@keyframes show-overlay
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+.md-hide
+  ~ .md-overlay
+    opacity: 0
+    transition: opacity 0.5s, easy-in-out
+
+  .md-content
+    transform: translateY(-200%)
+    opacity: 0
+    transition: all 0.5s, easy-in-out
+
+
+@media (max-width: 450px)
+  .md-header__title
+    font-size: 15px

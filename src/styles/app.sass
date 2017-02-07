@@ -1,0 +1,225 @@
+@font-face
+  font-family: 'icomoon'
+  src: url('fonts/icomoon/icomoon.eot')
+  src: url('fonts/icomoon/icomoon.woff'), url('fonts/icomoon/icomoon.ttf'), url('fonts/icomoon/icomoon.svg#icomoon')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Dignus'
+  src: url('./fonts/dignus/dignus.woff'), url('./fonts/dignus/dignus_thin.woff')
+  font-weight: normal
+  font-style: normal
+
+$main-font: Dignus
+$main-font-color: #fff
+$main-font-size: 16px
+$title-font-size: 36px
+$second-font-color: #67fbbe
+$second-font-shadow: 0 0 20px #16e590
+$sub-title-font-size: 24px
+$main-btn-bg-color: #000
+$remove-btn-hover: #AD0900
+$add-btn-hover: #7900AD
+
+// base
+body
+  color: $main-font-color
+  background: url('./img/main_background.jpg')
+  font-family: $main-font
+  font-size: $main-font-size
+  line-height: 1.5
+  margin: 0
+  padding: 0
+
+
+h1
+  font-size: $title-font-size
+h1, h2, h3
+  margin-top: 20px
+  margin-bottom: 10px
+  font-weight: 500
+  line-height: 1.1
+  text-align: center
+
+h4
+  font-size: $sub-title-font-size
+
+ul
+  margin-top: 0
+  padding-left: 0
+  margin-bottom: 0
+
+
+a
+  text-decoration: none
+  color: $second-font-color
+
+img
+  vertical-align: middle
+  border: 0
+
+// input
+input
+  line-height: inherit
+  font: inherit
+
+input[type=search]
+  box-sizing: border-box
+  &::-webkit-input-placeholder
+    color: $second-font-color
+    text-shadow: $second-font-shadow
+  &::-webkit-search-cancel-button
+    display: none
+
+
+// buttons
+button
+  cursor: pointer
+  border: none
+  margin: 0
+  border-radius: 0
+  outline: none
+  user-select: none
+
+// icons
+.icon-remove:before
+  content: "\e00f"
+
+
+
+.navbar__nav__item > a
+  &:hover, &:active, &:focus
+    text-shadow: $second-font-shadow
+    color: $second-font-color
+
+    &:after, &:before
+      background: $second-font-color
+      box-shadow: 0 0 15px 1px $second-font-color
+
+
+.md-modal .md-content
+  background: url('img/modal-bg.jpg')
+
+.search-input
+  width: 100%
+  padding: 6px 12px
+  color: $second-font-color
+  background-color: $main-btn-bg-color
+  border: 1px solid #222
+  border-radius: 4px
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+
+  &:focus
+    text-shadow: $second-font-shadow
+    border-color: $second-font-color
+    outline: 0
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 233, 219, 0.6)
+
+
+// buttons
+.btn
+  background: $main-btn-bg-color
+  color: $main-font-color
+  text-transform: uppercase
+  letter-spacing: 1px
+  font-weight: 700
+  font-size: $main-font-size
+  position: relative
+  transition: all 0.3s
+  font-family: inherit
+
+  span
+    display: inline-block
+    width: 100%
+    height: 100%
+    transition: all 0.3s
+  &:before
+    font-family: 'icomoon'
+  &:hover, &:focus
+    border: none
+    outline: none
+  &:active
+    background: #020202
+    &:hover, :focus
+      outline: none
+
+  &__confirm--remove, &__confirm--cancel
+    &:hover
+      color: #000
+      background: #fff
+      box-shadow: 0 0 40px -5px rgba(255,255,255,0.75)
+
+
+  &__confirm--cancel
+    background: #fff
+    color: #000
+
+
+  &__confirm--remove
+    &:hover
+      text-shadow: $second-font-shadow
+      color: $second-font-color
+      background: $main-btn-bg-color
+      box-shadow: 0 0 40px -5px #16e590
+
+
+.btn--modal
+  padding: 10px
+  width: 100%
+  transition: all 0.7s
+  border-radius: 2px
+  &-remove
+    &:hover
+      text-shadow: $second-font-shadow
+      color: $second-font-color
+      background: $main-btn-bg-color
+      box-shadow: 0 0 40px -5px #16e590
+      animation: box-shadow--remove 2s infinite
+  &-add
+    transform: translateZ(0)
+    &:hover
+      text-shadow: 0 0 20px #a85be5
+      box-shadow: 0 0 40px -5px #B900E5
+      animation: box-shadow--add 2s infinite
+
+
+// help-block
+.help-block
+  display: flex
+  justify-content: center
+  animation: help-appear 0.3s
+  margin-top: 4px
+
+@keyframes help-appear
+  0%
+    transform: translateY(100%)
+  100%
+    transform: translateY(0)
+
+
+@keyframes box-shadow--remove
+  0%
+    box-shadow: 0 0 40px -5px #16e590
+  50%
+    box-shadow: 0 0 30px 5px #16e590
+
+  75%
+    box-shadow: 1px 1px 30px 5px #16e590
+
+  100%
+    box-shadow: 0 0 40px -5px #16e590
+
+
+@keyframes box-shadow--add
+  0%
+    box-shadow: 0 0 40px -5px #B900E5
+  50%
+    box-shadow: 0 0 30px 5px #B900E5
+
+  75%
+    box-shadow: 1px 1px 30px 5px #B900E5
+
+  100%
+    box-shadow: 0 0 40px -5px #B900E5

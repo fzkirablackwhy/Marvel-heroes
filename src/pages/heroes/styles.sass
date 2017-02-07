@@ -1,0 +1,88 @@
+.heroes-page__container
+  display: flex
+  width: 90%
+  margin: 0 auto
+  flex-flow: column wrap
+  align-items: center
+
+.heroes__container
+  display: flex
+  flex-flow: row wrap
+  margin-top: 10px
+  justify-content: center
+  padding: 10px
+  background: url('../../styles/img/modal-bg.jpg')
+  animation: heroes__container-appear 0.7s ease-in-out
+
+.hero-item
+  width: 160px
+  height: 245px
+  animation: hero-appear 0.7s ease-in-out
+
+  &__wrapper
+    display: flex
+    justify-content: center
+    height: 100%
+    overflow: hidden
+    border: 1px solid
+    position: relative
+
+    img
+      height: 100%
+      transition: all 0.4s ease-in-out
+
+    .caption
+      position: absolute
+      opacity: 0
+      left: 0
+      top: 325px
+      transition: all 0.4s ease-in-out
+
+    .caption-text
+      color: #fff
+      top: 3px
+      padding: 5px
+      text-align: center
+      width: 160px
+      background-color: rgba(142, 68, 173, 0.95)
+      z-index: 5
+      position: absolute
+
+      p
+        margin: 0
+
+      h1
+        text-transform: uppercase
+        font-size: 18px
+
+    &:hover
+      img
+        transform: scale(1.45)
+        filter: grayscale(1) contrast(130%)
+        cursor: pointer
+      .caption
+        opacity: 1
+        transform: translateY(-140px)
+
+
+@keyframes hero-appear
+  0%
+    transform: translateX(100%) skewY(25deg)
+  100%
+    transform: translateX(0)
+
+@keyframes heroes__container-appear
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+@media (max-width: 450px)
+  .hero-item
+    width: 88px
+    height: 150px
+
+
+
+
