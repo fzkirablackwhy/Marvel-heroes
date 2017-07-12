@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "custom-react-scripts": "0.0.23",
-    "react-router": "latest"
+    "react-router": "^3.0.2"
   },
   "dependencies": {
     "react": "^15.4.2",
@@ -13,7 +13,7 @@
     "classnames": "latest",
     "lodash": "latest",
     "marvel-api": "latest",
-    "react-router-redux": "latest",
+    "react-router-redux": "^4.0.8",
     "redux": "latest",
     "redux-thunk": "latest"
   },
