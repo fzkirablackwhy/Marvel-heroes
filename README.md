@@ -1,4 +1,4 @@
-Live DEMO - marvel-heroes.surge.sh
+Live DEMO - http://marvel-heroes.surge.sh
 
 # Marvel Heroes
 
