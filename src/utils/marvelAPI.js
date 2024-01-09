@@ -1,7 +1,7 @@
 import api from 'marvel-api';
 
-const PRIV_KEY = 'e7b24e46b8e182c47d9f5a69a09464f96a52bcda';
-export const PUBLIC_KEY= '85c342578b799c5ba4e507d5bb08ff8e';
+const PRIV_KEY = '742feadd1fab6ca2284103d76763aa18ef4f123a';
+export const PUBLIC_KEY= '91ddf64718b3221b5321a441380c2b96';
 export const marvel = api.createClient({
     publicKey: PUBLIC_KEY,
     privateKey: PRIV_KEY
